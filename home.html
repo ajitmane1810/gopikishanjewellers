@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gopikidhsn Jewellers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <!-- swiper  -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+  </head>
+
+  <style>
+    .animated-link {
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+    }
+
+    .animated-link::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0%;
+      height: 2px;
+      background-color: #dc2626; /* red-600 */
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+
+    .animated-link:hover::after {
+      width: 100%;
+      left: 0;
+    }
+
+    /* headerswiper */
+     /* Pagination dots styling */
+      .swiper-pagination-bullet {
+        background-color: #d1d5db !important; /* Tailwind gray-300 */
+        opacity: 1 !important;
+        width: 10px !important;
+        height: 10px !important;
+        margin: 0 6px !important;
+        border-radius: 9999px !important;
+      }
+
+      .swiper-pagination-bullet-active {
+        background-color: #450F1E !important; /* Tailwind red-600 */
+      }
+
+
+    .scroll-hidden {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+
+    .scroll-hidden::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
+    }
+
+    #scrollContainer {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    #scrollContainer::-webkit-scrollbar {
+      display: none;
+    }
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+      font-size: 16px;
+    }
+  </style>
+
+  <body class="font-sans text-gray-800">
+    <!-- Top Header -->
+    <header
+      class="hidden md:block bg-[#f9ebeb] font-montserrat px-4 md:px-20 py-3"
+    >
+      <div class="flex justify-between items-center">
+        <img
+          src="https://suvarnasetu.com/svrnstuapi/storage/app/public/40/website/website_header_logo_067911600.png"
+          alt="Logo"
+          class="h-10 w-auto mix-blend-multiply"
+        />
+        <ul class="flex items-center space-x-4 text-gray-700">
+          <li class="hover:text-red-500 cursor-pointer">
+            <i data-feather="search"></i>
+          </li>
+          <li class="hover:text-red-500 cursor-pointer">
+            <i data-feather="mail"></i>
+          </li>
+          <li class="hover:text-red-500 cursor-pointer">
+            <i data-feather="bell"></i>
+          </li>
+          <li class="hover:text-red-500 cursor-pointer">
+            <i data-feather="shopping-cart"></i>
+          </li>
+          <li class="hover:text-red-500 cursor-pointer">
+            <i data-feather="heart"></i>
+          </li>
+          <li class="hover:text-red-500 cursor-pointer">
+            <i data-feather="log-in"></i>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Mobile Header -->
+    <div
+      class="md:hidden flex items-center justify-between px-4 py-2 bg-white relative z-50"
+    >
+      <!-- Toggle Button -->
+      <button id="menu-toggle" class="text-gray-700">
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <!-- Centered Logo -->
+      <div class="absolute left-1/2 transform -translate-x-1/2">
+        <img
+          src="assests/website_header_logo_067911600.png"
+          alt="Logo"
+          class="h-8"
+        />
+      </div>
+    </div>
+
+    <!-- Sidebar Drawer -->
+    <div
+      id="mobile-menu"
+      class="fixed top-0 left-0 h-full w-64 bg-white shadow transform -translate-x-full transition-transform duration-300 z-50 md:hidden overflow-y-auto"
+    >
+      <div class="flex justify-between items-center px-4 py-3 border-b">
+        <span class="text-lg font-bold">Menu</span>
+        <button id="menu-close" class="text-gray-700">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Cloned mobile menu from your original desktop menu -->
+      <ul class="p-4 space-y-2 text-[14px] font-montserrat text-gray-800">
+        <li><a href="#" class="block py-2 hover:text-red-600">Home</a></li>
+        <li>
+          <details>
+            <summary class="cursor-pointer py-2 hover:text-red-600">
+              Gold Ornaments
+            </summary>
+            <ul class="pl-4">
+              <li>
+                <a href="#" class="block py-1 hover:text-red-600">22KT GOLD</a>
+              </li>
+              <li>
+                <a href="#" class="block py-1 hover:text-red-600">18KT GOLD</a>
+              </li>
+              <li>
+                <a href="#" class="block py-1 hover:text-red-600"
+                  >Diamond ORNAMENT</a
+                >
+              </li>
+            </ul>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary class="cursor-pointer py-2 hover:text-red-600">
+              Silver Ornaments
+            </summary>
+            <ul class="pl-4">
+              <li>
+                <a href="#" class="block py-1 hover:text-red-600"
+                  >SILVER ORNAMENTS</a
+                >
+              </li>
+            </ul>
+          </details>
+        </li>
+        <li><a href="#" class="block py-2 hover:text-red-600">Gold Coin</a></li>
+        <li>
+          <a href="#" class="block py-2 hover:text-red-600">Silver Coin</a>
+        </li>
+        <li>
+          <a href="#" class="block py-2 hover:text-red-600">Silver Utensil</a>
+        </li>
+        <li>
+          <a href="#" class="block py-2 hover:text-red-600"
+            >Jewellery Collection Wise</a
+          >
+        </li>
+        <li>
+          <a href="#" class="block py-2 hover:text-red-600">Shop By Price</a>
+        </li>
+        <li><a href="#" class="block py-2 hover:text-red-600">More</a></li>
+      </ul>
+    </div>
+    <!-- Navigation -->
+    <nav class="hidden md:block bg-white shadow px-2 py-2 z-10 relative">
+      <ul
+        class="flex justify-center gap-8 text-md font-medium text-gray-800 leading-none m-0 p-0"
+      >
+        <li>
+          <a href="#" class="hover:text-red-600 animated-link py-2">Home</a>
+        </li>
+
+        <!-- GOLD ORNAMENTS -->
+        <li class="group relative">
+          <a href="#" class="hover:text-red-600 animated-link py-2"
+            >Gold Ornaments</a
+          >
+          <ul
+            class="absolute hidden group-hover:block bg-white shadow-md mt-1 py-1 rounded z-20 min-w-[200px]"
+          >
+            <li>
+              <a
+                href="#"
+                class="block px-3 py-2 hover:bg-gray-100 animated-link"
+                >22KT GOLD ORNAMENTS</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block px-3 py-2 hover:bg-gray-100 animated-link"
+                >18KT GOLD ORNAMENTS</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block px-3 py-2 hover:bg-gray-100 animated-link"
+                >18KT GOLD DIAMOND ORNAMEN</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <!-- SILVER ORNAMENTS -->
+        <li class="group relative">
+          <a href="#" class="hover:text-red-600 animated-link py-2"
+            >Silver Ornaments</a
+          >
+          <ul
+            class="absolute hidden group-hover:block bg-white shadow-md mt-1 py-1 rounded z-20 min-w-[200px]"
+          >
+            <li>
+              <a
+                href="#"
+                class="block px-3 py-2 hover:bg-gray-100 animated-link"
+                >SILVER ORNAMENTS</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <!-- Other Tabs -->
+        <li>
+          <a href="#" class="hover:text-red-600 animated-link py-2"
+            >Gold Coin</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="hover:text-red-600 animated-link sm:block md:hidden lg:block py-2"
+            >Silver Coin</a
+          >
+        </li>
+
+        <!-- SILVER UTENSIL -->
+        <li class="group relative">
+          <a
+            href="#"
+            class="hover:text-red-600 animated-link sm:block md:hidden lg:block py-2"
+            >Silver Utensil</a
+          >
+          <ul
+            class="absolute hidden group-hover:block bg-white shadow-md mt-1 py-1 rounded z-20 min-w-[200px]"
+          >
+            <li>
+              <a
+                href="#"
+                class="block px-3 py-2 hover:bg-gray-100 animated-link"
+                >SILVER UTENCIAL 999</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <!-- JEWELLERY COLLECTION -->
+        <li class="group relative">
+          <a
+            href="#"
+            class="hover:text-red-600 animated-link sm:block md:hidden lg:block py-2"
+            >Jewellery Collection Wise</a
+          >
+          <ul
+            class="absolute hidden group-hover:block bg-white shadow-md mt-1 py-1 rounded z-20 min-w-[200px]"
+          >
+            <li>
+              <a
+                href="#"
+                class="block px-3 py-2 hover:bg-gray-100 animated-link"
+                >Mens Collections</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block px-3 py-2 hover:bg-gray-100 animated-link"
+                >Womens Collections</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block px-3 py-2 hover:bg-gray-100 animated-link"
+                >Kids Collections</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <!-- SHOP BY PRICE -->
+        <li class="group relative">
+          <a
+            href="#"
+            class="hover:text-red-600 animated-link sm:block md:hidden lg:block py-2"
+            >Shop By Price</a
+          >
+          <ul
+            class="absolute hidden group-hover:block bg-white shadow-md mt-1 py-1 rounded z-20 min-w-[200px]"
+          >
+            <li>
+              <a
+                href="#"
+                class="block px-3 py-2 hover:bg-gray-100 animated-link"
+                >1 - 500</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block px-3 py-2 hover:bg-gray-100 animated-link"
+                >501 - 1000</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block px-3 py-2 hover:bg-gray-100 animated-link"
+                >1001 - 2000</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block px-3 py-2 hover:bg-gray-100 animated-link"
+                >2001 - 5000</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block px-3 py-2 hover:bg-gray-100 animated-link"
+                >5001 - 10000</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block px-3 py-2 hover:bg-gray-100 animated-link"
+                >10001 - 15000</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block px-3 py-2 hover:bg-gray-100 animated-link"
+                >15001 - 20000</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block px-3 py-2 hover:bg-gray-100 animated-link"
+                >20001 - 30000</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block px-3 py-2 hover:bg-gray-100 animated-link"
+                >30001 - 50000</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block px-3 py-2 hover:bg-gray-100 animated-link"
+                >50001 - 75000</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <!-- MORE MENU -->
+        <li class="group relative">
+          <a
+            href="#"
+            class="flex items-center gap-1 py-2 px-2 hover:text-red-600 font-medium animated-link"
+          >
+            <span>More</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="5.328 4.8 13.344 10.896"
+              width="12"
+              height="12"
+            >
+              <path
+                d="M12,15.5a1.993,1.993,0,0,1-1.414-.585L5.293,9.621,6.707,8.207,12,13.5l5.293-5.293,1.414,1.414-5.293,5.293A1.993,1.993,0,0,1,12,15.5Z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
+
+          <div
+            class="absolute hidden group-hover:flex bg-white shadow-xl z-50 mt-1 rounded-md"
+          >
+            <ul class="w-60 text-sm relative leading-tight">
+              <!-- TAB 1 - 22KT -->
+              <li class="relative group/sub1">
+                <a
+                  href="#"
+                  class="block px-3 py-2 hover:text-red-600 font-semibold animated-link flex items-center justify-between"
+                >
+                  <span>22KT GOLD ORNAMENTS</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </a>
+                <ul
+                  class="absolute top-0 right-full hidden group-hover/sub1:block bg-white shadow-lg rounded min-w-[220px] z-50"
+                >
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-3 py-1 hover:bg-gray-100 animated-link"
+                      >RING LADIES 22KT</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-3 py-1 hover:bg-gray-100 animated-link"
+                      >RING GENTS 22KT</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-3 py-1 hover:bg-gray-100 animated-link"
+                      >TOPS 22KT</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-3 py-1 hover:bg-gray-100 animated-link"
+                      >LATKAN 22KT</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-3 py-1 hover:bg-gray-100 animated-link"
+                      >BALI 22KT</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <!-- TAB 2 - 18KT -->
+              <li class="relative group/sub2">
+                <a
+                  href="#"
+                  class="block px-3 py-2 hover:text-red-600 font-semibold animated-link flex items-center justify-between"
+                >
+                  <span>18KT GOLD ORNAMENT</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </a>
+                <ul
+                  class="absolute top-0 right-full hidden group-hover/sub2:block bg-white shadow-lg rounded min-w-[220px] z-50"
+                >
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-3 py-1 hover:bg-gray-100 animated-link"
+                      >RING LADIES 18KT</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-3 py-1 hover:bg-gray-100 animated-link"
+                      >RING GENTS 18KT</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-3 py-1 hover:bg-gray-100 animated-link"
+                      >TOPS 18KT</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-3 py-1 hover:bg-gray-100 animated-link"
+                      >BALI 18KT</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-3 py-1 hover:bg-gray-100 animated-link"
+                      >NATHUNI 18KT</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-3 py-1 hover:bg-gray-100 animated-link"
+                      >NOSEPIN 18KT</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <!-- TAB 3 - Diamond -->
+              <li class="relative group/sub2">
+                <a
+                  href="#"
+                  class="block px-3 py-2 hover:text-red-600 font-semibold animated-link flex items-center justify-between"
+                >
+                  <span>18KT GOLD DIAMOND ORNAMEN</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </a>
+                <ul
+                  class="absolute top-0 right-full hidden group-hover/sub2:block bg-white shadow-lg rounded min-w-[220px] z-50"
+                >
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-3 py-1 hover:bg-gray-100 animated-link"
+                      >DIAMOND TOP 18KT</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-3 py-1 hover:bg-gray-100 animated-link"
+                      >DIAMOND RING LADIES 18KT</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-3 py-1 hover:bg-gray-100 animated-link"
+                      >DIAMOND RING GENTS 18KT</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-3 py-1 hover:bg-gray-100 animated-link"
+                      >DIAMOND M.S. PENDANT 18KT</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-3 py-1 hover:bg-gray-100 animated-link"
+                      >DIAMOND PENDANT 18KT</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-3 py-1 hover:bg-gray-100 animated-link"
+                      >DIAMOND NOSEPIN 18KT</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-3 py-1 hover:bg-gray-100 animated-link"
+                      >DIAMOND NATHUNI 18KT</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-3 py-1 hover:bg-gray-100 animated-link"
+                      >DIAMOND BALI 18KT</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <!-- TAB 4 - Silver -->
+              <li class="relative group/sub2">
+                <a
+                  href="#"
+                  class="block px-3 py-2 hover:text-red-600 font-semibold animated-link flex items-center justify-between"
+                >
+                  <span>SILVER ORNAMENT</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </a>
+                <ul
+                  class="absolute top-0 right-full hidden group-hover/sub2:block bg-white shadow-lg rounded min-w-[220px] z-50"
+                >
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-3 py-1 hover:bg-gray-100 animated-link"
+                      >BICHYA SILVER</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-3 py-1 hover:bg-gray-100 animated-link"
+                      >PAYAL SILVER</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-3 py-1 hover:bg-gray-100 animated-link"
+                      >PAJEB SILVER</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-3 py-1 hover:bg-gray-100 animated-link"
+                      >BANGLE SILVER</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-3 py-1 hover:bg-gray-100 animated-link"
+                      >BABY BALA SILVER</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <!-- TAB 5 - Silver Utensils -->
+              <li class="relative group/sub2">
+                <a
+                  href="#"
+                  class="block px-3 py-2 hover:text-red-600 font-semibold animated-link flex items-center justify-between"
+                >
+                  <span>SILVER UTENCIAL 999</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </a>
+                <ul
+                  class="absolute top-0 right-full hidden group-hover/sub2:block bg-white shadow-lg rounded min-w-[220px] z-50"
+                >
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-3 py-1 hover:bg-gray-100 animated-link"
+                      >HATHI SU999</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-3 py-1 hover:bg-gray-100 animated-link"
+                      >KACHOWA MURTI SU999</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-3 py-2 hover:bg-gray-100 animated-link"
+                  >Gold SIP</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-3 py-2 hover:bg-gray-100 animated-link"
+                  >Digital Gold</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-3 py-2 hover:bg-gray-100 animated-link"
+                  >E-Gift Card</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-3 py-2 hover:bg-gray-100 animated-link"
+                  >Gold Rate Booking</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-3 py-2 hover:bg-gray-100 animated-link"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-3 py-2 hover:bg-gray-100 animated-link"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <!--  Search Input with Icon -->
+    <div class="md:hidden relative w-full px-2 mx-auto my-2">
+      <span class="absolute inset-y-0 left-4 flex items-center text-gray-500">
+        <!-- Search Icon -->
+        <svg
+          class="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </span>
+      <input
+        type="text"
+        placeholder="Search"
+        class="w-full pl-9 pr-3 py-2 border border-gray-300 rounded-md focus:outline-none text-sm"
+      />
+    </div>
+
+    <!-- Carousel Section -->
+   <div class="relative w-full">
+      <div class="swiper" id="headerSwiper">
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <img
+              src="assests/banner_008139000.jpg"
+              class="h-48 md:h-[560px] w-full object-cover"
+              alt="Slide 1"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="assests/banner_008202900.jpg"
+              class="h-48 md:h-[560px] w-full object-cover"
+              alt="Slide 2"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="assests/banner_027373400.jpg"
+              class="h-48 md:h-[560px] w-full object-cover"
+              alt="Slide 3"
+            />
+          </div>
+        </div>
+
+        <!-- Pagination Dots -->
+        <div class="swiper-pagination"></div>
+
+        <!-- Left Arrow -->
+        <div
+          class="swiper-button-prev !text-white w-8 h-8 bg-[#0000004D] hover:!bg-[#450F1E] rounded-full p-2 shadow-xl hidden md:flex"
+        ></div>
+
+        <!-- Right Arrow -->
+        <div
+          class="swiper-button-next !text-white w-8 h-8 bg-[#0000004D] hover:!bg-[#450F1E] p-2 rounded-full shadow-xl hidden md:flex"
+        ></div>
+      </div>
+    </div>
+    <!-- Price Header Bar -->
+    <div
+      class="bg-[#561325] text-white text-sm font-medium rounded-3xl mx-4 my-4 py-2 px-6 md:py-4 flex justify-evenly items-center overflow-hidden"
+    >
+      <div
+        id="carousel"
+        class="flex items-center overflow-x-auto scroll-hidden snap-x snap-mandatory space-x-6 scroll-smooth"
+      >
+        <!-- Price Cards -->
+        <div
+          class="price-card flex items-center gap-2 flex-shrink-0 bg-[#450F1E] px-4 md:px-28 py-1 rounded-lg snap-start"
+        >
+          <img class="w-10 h-8" src="assests/gold-coins.png" alt="" />
+          <span>18KT(750) <span class="font-bold">₹8360</span> /gm</span>
+        </div>
+
+        <div
+          class="price-card flex items-center gap-2 flex-shrink-0 bg-[#450F1E] px-4 md:px-28 py-1 rounded-lg snap-start"
+        >
+          <img class="w-10 h-8" src="assests/gold-coins.png" alt="" />
+          <span>22KT (916) <span class="font-bold">₹9380</span> /gm</span>
+        </div>
+
+        <div
+          class="price-card flex items-center gap-2 flex-shrink-0 bg-[#450F1E] px-4 md:px-28 py-1 rounded-lg snap-start"
+        >
+          <img class="w-10 h-8" src="assests/silver-coins.png" alt="" />
+          <span>FINE SILVER <span class="font-bold">₹107</span> /gm</span>
+        </div>
+
+        <div
+          class="price-card flex items-center gap-2 flex-shrink-0 bg-[#450F1E] px-4 md:px-28 py-1 rounded-lg snap-start"
+        >
+          <img class="w-10 h-8" src="assests/gold-coins.png" alt="" />
+          <span>PLATINUM <span class="font-bold">₹4200</span> /gm</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Collection Swiper -->
+    <div class=" relative max-w-full px-4 md:px-12 md:py-6 py-2">
+      <div class="swiper" id="collectionSwiper">
+        <div class="swiper-wrapper">
+          <!-- Slides: Small on mobile, larger on desktop -->
+          <div class="swiper-slide w-[140px] md:w-[200px] h-[220px] md:h-[260px]">
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden h-full flex flex-col">
+              <img
+                src="assests/item_category_035249000.jpeg"
+                class="w-full h-36 md:h-48 object-cover"
+              />
+              <div class="text-center p-2 text-[12px] md:text-sm uppercase flex-1 flex items-center justify-center overflow-hidden text-ellipsis">
+                Diamond Pendant
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide w-[140px] md:w-[200px] h-[220px] md:h-[260px]">
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden h-full flex flex-col">
+              <img
+                src="assests/item_category_037171800.jpeg"
+                class="w-full h-36 md:h-48 object-cover"
+              />
+              <div class="text-center p-2 text-[12px] md:text-sm uppercase flex-1 flex items-center justify-center overflow-hidden text-ellipsis">
+                Diamond Bali
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide w-[140px] md:w-[200px] h-[220px] md:h-[260px]">
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden h-full flex flex-col">
+              <img
+                src="assests/item_category_038368000.jpeg"
+                class="w-full h-36 md:h-48 object-cover"
+              />
+              <div class="text-center p-2 text-[12px] md:text-sm uppercase flex-1 flex items-center justify-center overflow-hidden text-ellipsis">
+                Diamond Pendant Double Kunda
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide w-[140px] md:w-[200px] h-[220px] md:h-[260px]">
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden h-full flex flex-col">
+              <img
+                src="assests/item_category_038989000.jpeg"
+                class="w-full h-36 md:h-48 object-cover"
+              />
+              <div class="text-center p-2 text-[12px] md:text-sm uppercase flex-1 flex items-center justify-center overflow-hidden text-ellipsis">
+                Double Ring Gents
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide w-[140px] md:w-[200px] h-[220px] md:h-[260px]">
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden h-full flex flex-col">
+              <img
+                src="assests/item_category_088570500.jpeg"
+                class="w-full h-36 md:h-48 object-cover"
+              />
+              <div class="text-center p-2 text-[12px] md:text-sm uppercase flex-1 flex items-center justify-center overflow-hidden text-ellipsis">
+                Diamond Ring Ladies
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide w-[140px] md:w-[200px] h-[220px] md:h-[260px]">
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden h-full flex flex-col">
+              <img
+                src="assests/item_category_095770900.jpeg"
+                class="w-full h-36 md:h-48 object-cover"
+              />
+              <div class="text-center p-2 text-[12px] md:text-sm uppercase flex-1 flex items-center justify-center overflow-hidden text-ellipsis">
+                Diamond Nosepin
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide w-[140px] md:w-[200px] h-[220px] md:h-[260px]">
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden h-full flex flex-col">
+              <img
+                src="assests/item_category_023290000.jpeg"
+                class="w-full h-36 md:h-48 object-cover"
+              />
+              <div class="text-center p-2 text-[12px] md:text-sm uppercase flex-1 flex items-center justify-center overflow-hidden text-ellipsis">
+                Diamond Tops
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide w-[140px] md:w-[200px] h-[220px] md:h-[260px]">
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden h-full flex flex-col">
+              <img
+                src="assests/item_category_024963000.jpeg"
+                class="w-full h-36 md:h-48 object-cover"
+              />
+              <div class="text-center p-2 text-[12px] md:text-sm uppercase flex-1 flex items-center justify-center overflow-hidden text-ellipsis">
+                Diamond Nathuni
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Swiper Navigation Buttons (hidden on mobile) -->
+        <div
+          class="swiper-button-next bg-[#0000004D] text-white hidden md:flex [&::after]:text-xl w-10 h-10 rounded-full"
+        ></div>
+        <div
+          class="swiper-button-prev bg-[#0000004D] text-white hidden md:flex [&::after]:text-xl w-10 h-10 rounded-full"
+        ></div>
+      </div>
+    </div>
+
+    <!-- Discover the Sparkle -->
+    <div class="max-w-full px-4 md:px-12">
+      <!-- Section Title -->
+      <div class="flex items-center justify-center py-3">
+        <div class="h-[2px] bg-black w-0 sm:w-28"></div>
+        <div class="hidden md:block w-2 h-2 bg-black rounded-full"></div>
+        <span
+          class="md:text-[27px] sm:text-3xl md:font-montserrat mx-3 text-black text-center"
+        >
+          "Discover the Sparkle: Explore Our Gold Collection"
+        </span>
+        <div class="hidden md:block w-2 h-2 bg-black rounded-full"></div>
+        <div class="h-[2px] bg-black w-0 sm:w-28"></div>
+      </div>
+
+      <!-- Swiper Container -->
+      <div class="mx-auto">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <img
+                src="https://s3.ap-south-1.amazonaws.com/suvarnasetu-images/40/banner/banner_030030900.jpg"
+                alt="Banner 1"
+                class="rounded shadow-md w-full"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://s3.ap-south-1.amazonaws.com/suvarnasetu-images/40/banner/banner_007803400.jpg"
+                alt="Banner 2"
+                class="rounded shadow-md w-full"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://s3.ap-south-1.amazonaws.com/suvarnasetu-images/40/banner/banner_055786700.jpg"
+                alt="Banner 3"
+                class="rounded shadow-md w-full"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://s3.ap-south-1.amazonaws.com/suvarnasetu-images/40/banner/banner_035604600.jpg"
+                alt="Banner 4"
+                class="rounded shadow-md w-full"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://s3.ap-south-1.amazonaws.com/suvarnasetu-images/40/banner/banner_090906500.jpg"
+                alt="Banner 5"
+                class="rounded shadow-md w-full"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://s3.ap-south-1.amazonaws.com/suvarnasetu-images/40/banner/banner_069981000.jpg"
+                alt="Banner 6"
+                class="rounded shadow-md w-full"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://s3.ap-south-1.amazonaws.com/suvarnasetu-images/40/banner/banner_027685100.jpg"
+                alt="Banner 7"
+                class="rounded shadow-md w-full"
+              />
+            </div>
+          </div>
+
+          <!-- Navigation Buttons -->
+          <div
+            class="swiper-button-next bg-[#0000004D] text-white hidden md:flex [&::after]:text-xl w-10 h-10 rounded-full"
+          ></div>
+          <div
+            class="swiper-button-prev bg-[#0000004D] text-white hidden md:flex [&::after]:text-xl w-10 h-10 rounded-full"
+          ></div>
+
+          <div class="swiper-pagination mt-4"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bridal Blis -->
+    <div>
+      <!-- Section Title -->
+      <div class="flex items-center justify-center px-4 py-2 md:mt-2">
+        <div class="h-[2px] bg-black w-0 sm:w-28"></div>
+        <div class="hidden md:block w-2 h-2 bg-black rounded-full"></div>
+        <span
+          class="md:text-[27px] sm:text-3xl md:font-montserrat mx-3 text-black text-center"
+        >
+          "Bridal Bliss: The Golden Touch for Your Wedding"
+        </span>
+        <div class="hidden md:block w-2 h-2 bg-black rounded-full"></div>
+        <div class="h-[2px] bg-black w-0 sm:w-28"></div>
+      </div>
+
+      <div class="flex justify-center items-center px-4 md:px-12 py-2">
+        <img
+          src="https://s3.ap-south-1.amazonaws.com/suvarnasetu-images/40/banner/banner_036350600.jpg"
+          alt="Ecommerce Collection"
+          class="w-full rounded-xl shadow-lg"
+        />
+      </div>
+    </div>
+
+    <!-- Timeless Collection  -->
+
+    <section>
+      <!-- Title -->
+      <div class="flex items-center justify-center px-4 py-2 md:my-2">
+        <div class="h-[2px] bg-black w-0 sm:w-28"></div>
+        <div class="hidden md:block w-2 h-2 bg-black rounded-full"></div>
+        <span
+          class="md:text-[27px] sm:text-3xl md:font-montserrat mx-3 text-black text-center"
+        >
+          "Timeless Collections: Jewelry for Every Moment"
+        </span>
+        <div class="hidden md:block w-2 h-2 bg-black rounded-full"></div>
+        <div class="h-[2px] bg-black w-0 sm:w-28"></div>
+      </div>
+
+      <!-- Image carousel container -->
+      <div class="relative px-4 sm:px-8 md:px-12">
+        <!-- Scrollable Row -->
+        <div
+          id="scrollContainer"
+          class="flex overflow-x-auto gap-4 px-4 scroll-smooth snap-x snap-mandatory"
+        >
+          <!-- Image Cards -->
+          <div class="flex-shrink-0 sm:w-[50%] w-32 md:w-80 snap-start">
+            <img
+              src="https://s3.ap-south-1.amazonaws.com/suvarnasetu-images/40/banner/banner_001498500.jpg"
+              alt="Jewelry 1"
+              class="w-full rounded-xl shadow-md transition-transform duration-300"
+            />
+          </div>
+          <div class="flex-shrink-0 sm:w-[50%] w-32 md:w-80 snap-start">
+            <img
+              src="https://s3.ap-south-1.amazonaws.com/suvarnasetu-images/40/banner/banner_024699000.jpg"
+              alt="Jewelry 2"
+              class="w-full rounded-xl shadow-md transition-transform duration-300"
+            />
+          </div>
+          <div class="flex-shrink-0 sm:w-[50%] w-32 md:w-80 snap-start">
+            <img
+              src="https://s3.ap-south-1.amazonaws.com/suvarnasetu-images/40/banner/banner_015511900.jpg"
+              alt="Jewelry 3"
+              class="w-full rounded-xl shadow-md transition-transform duration-300"
+            />
+          </div>
+          <div class="flex-shrink-0 sm:w-[50%] w-32 md:w-80 snap-start">
+            <img
+              src="https://s3.ap-south-1.amazonaws.com/suvarnasetu-images/40/banner/banner_015442000.jpg"
+              alt="Jewelry 4"
+              class="w-full rounded-xl shadow-md transition-transform duration-300"
+            />
+          </div>
+          <div class="flex-shrink-0 sm:w-[50%] w-32 md:w-80 snap-start">
+            <img
+              src="https://s3.ap-south-1.amazonaws.com/suvarnasetu-images/40/banner/banner_053011700.jpg"
+              alt="Jewelry 5"
+              class="w-full rounded-xl shadow-md transition-transform duration-300"
+            />
+          </div>
+          <div class="flex-shrink-0 w-32 sm:w-[50%] md:w-80 snap-start">
+            <img
+              src="https://s3.ap-south-1.amazonaws.com/suvarnasetu-images/40/banner/banner_063563200.jpg"
+              alt="Jewelry 6"
+              class="w-full rounded-xl shadow-md transition-transform duration-300"
+            />
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button
+          onclick="scrollLeft()"
+          class="absolute top-1/2 left-20 transform -translate-y-1/2 bg-transparent hover:bg-[#450F1E] shadow-lg rounded-full p-2 hidden md:flex"
+        >
+          <svg
+            class="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
+        <button
+          onclick="scrollRight()"
+          class="absolute top-1/2 right-20 transform -translate-y-1/2 bg-transparent hover:bg-[#450F1E] shadow-lg rounded-full p-2 hidden md:flex"
+        >
+          <svg
+            class="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- Elegance in Every Sparkle -->
+    <div>
+      <!-- Section Title -->
+      <div class="flex items-center justify-center px-4 py-2 md:mt-2">
+        <div class="h-[2px] bg-black w-0 sm:w-28"></div>
+        <div class="hidden md:block w-2 h-2 bg-black rounded-full"></div>
+        <span
+          class="md:text-[27px] sm:text-3xl md:font-montserrat mx-3 text-black text-center"
+        >
+          "Elegance in Every Sparkle: Women's Gold Collection"
+        </span>
+        <div class="hidden md:block w-2 h-2 bg-black rounded-full"></div>
+        <div class="h-[2px] bg-black w-0 sm:w-28"></div>
+      </div>
+
+      <div class="flex justify-center items-center px-4 md:px-12 py-2">
+        <img
+          src="https://s3.ap-south-1.amazonaws.com/suvarnasetu-images/40/banner/banner_025162900.jpg"
+          alt="Ecommerce Collection"
+          class="w-full rounded-xl shadow-lg"
+        />
+      </div>
+    </div>
+
+    <!-- The Radiant Collection: -->
+
+    <div>
+      <!-- Section Title -->
+      <div class="flex items-center justify-center px-4 py-2 md:mt-2">
+        <div class="h-[2px] bg-black w-0 sm:w-28"></div>
+        <div class="hidden md:block w-2 h-2 bg-black rounded-full"></div>
+        <span
+          class="md:text-[27px] sm:text-3xl md:font-montserrat mx-3 text-black text-center"
+        >
+          "The Radiant Collection: Shine in Style"
+        </span>
+        <div class="hidden md:block w-2 h-2 bg-black rounded-full"></div>
+        <div class="h-[2px] bg-black w-0 sm:w-28"></div>
+      </div>
+
+      <div class="container mx-2 md:mx-10 py-4">
+        <div class="swiper" id="radiant-collection">
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div
+              class="swiper-slide w-full sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 pl-2"
+            >
+              <img
+                src="https://s3.ap-south-1.amazonaws.com/suvarnasetu-images/40/banner/banner_045904700.jpg"
+                alt="Slide 1"
+                class="w-full rounded-xl transition-transform duration-300"
+              />
+            </div>
+            <div
+              class="swiper-slide w-full sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 pl-2"
+            >
+              <img
+                src="https://s3.ap-south-1.amazonaws.com/suvarnasetu-images/40/banner/banner_004774900.jpg"
+                alt="Slide 2"
+                class="w-full rounded-xl transition-transform duration-300"
+              />
+            </div>
+            <div
+              class="swiper-slide w-full sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 pl-2"
+            >
+              <img
+                src="https://s3.ap-south-1.amazonaws.com/suvarnasetu-images/40/banner/banner_041878100.jpg"
+                alt="Slide 3"
+                class="w-full rounded-xl transition-transform duration-300"
+              />
+            </div>
+            <div
+              class="swiper-slide w-full sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 pl-2"
+            >
+              <img
+                src="https://s3.ap-south-1.amazonaws.com/suvarnasetu-images/40/banner/banner_033800900.jpg"
+                alt="Slide 4"
+                class="w-full rounded-xl transition-transform duration-300"
+              />
+            </div>
+            <div
+              class="swiper-slide w-full sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 pl-2"
+            >
+              <img
+                src="https://s3.ap-south-1.amazonaws.com/suvarnasetu-images/40/banner/banner_004845400.jpg"
+                alt="Slide 5"
+                class="w-full rounded-xl transition-transform duration-300"
+              />
+            </div>
+            <div
+              class="swiper-slide w-full sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 pl-2"
+            >
+              <img
+                src="https://s3.ap-south-1.amazonaws.com/suvarnasetu-images/40/banner/banner_067343000.jpg"
+                alt="Slide 6"
+                class="w-full rounded-xl transition-transform duration-300"
+              />
+            </div>
+          </div>
+
+          <!-- Navigation Arrows -->
+
+          <!-- Left Arrow -->
+          <div
+            class="swiper-button-prev !text-white w-8 h-8 bg-transparent hover:!bg-[#450F1E] rounded-full p-1 rounded-full shadow-xl hidden md:flex"
+          ></div>
+
+          <!-- Right Arrow -->
+          <div
+            class="swiper-button-next !text-white w-8 h-8 bg-transparent hover:!bg-[#450F1E] p-1 rounded-full shadow-xl hidden md:flex"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- The Golden Edge -->
+    <div>
+      <!-- Section Title -->
+      <div class="flex items-center justify-center px-4 py-2 md:mt-2">
+        <div class="h-[2px] bg-black w-0 sm:w-28"></div>
+        <div class="hidden md:block w-2 h-2 bg-black rounded-full"></div>
+        <span
+          class="md:text-[27px] sm:text-3xl md:font-montserrat mx-3 text-black text-center"
+        >
+          "The Golden Edge: Exclusive Men's Collection"
+        </span>
+        <div class="hidden md:block w-2 h-2 bg-black rounded-full"></div>
+        <div class="h-[2px] bg-black w-0 sm:w-28"></div>
+      </div>
+
+      <div class="flex justify-center items-center px-4 md:px-12 py-2">
+        <img
+          src="https://s3.ap-south-1.amazonaws.com/suvarnasetu-images/40/banner/banner_099101500.jpg"
+          alt="Ecommerce Collection"
+          class="w-full rounded-xl shadow-lg"
+        />
+      </div>
+    </div>
+
+    <!-- Tiny Sparkles -->
+    <div>
+      <!-- Section Title -->
+      <div class="flex items-center justify-center px-4 py-2 md:mt-2">
+        <div class="h-[2px] bg-black w-0 sm:w-28"></div>
+        <div class="hidden md:block w-2 h-2 bg-black rounded-full"></div>
+        <span
+          class="md:text-[27px] sm:text-3xl md:font-montserrat mx-3 text-black text-center"
+        >
+          "Tiny Sparkles: Gold for Little Hearts"
+        </span>
+        <div class="hidden md:block w-2 h-2 bg-black rounded-full"></div>
+        <div class="h-[2px] bg-black w-0 sm:w-28"></div>
+      </div>
+
+      <div class="flex justify-center items-center px-4 md:px-12 py-2">
+        <img
+          src="https://s3.ap-south-1.amazonaws.com/suvarnasetu-images/40/banner/banner_093650500.jpg"
+          alt="Ecommerce Collection"
+          class="w-full rounded-xl shadow-lg"
+        />
+      </div>
+    </div>
+
+    <!-- JS Libraries & Script -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,319 @@
+// const progressCircle = document.querySelector(".autoplay-progress svg");
+// const progressContent = document.querySelector(".autoplay-progress span");
+
+// var swiper = new Swiper(".home-slider", {
+//    loop: true,
+//    // spaceBetween: 30,
+//    // centeredSlides: true,
+//    autoplay: {
+//       delay: 5000,
+//       disableOnInteraction: false,
+//    },
+//    pagination: {
+//       el: ".swiper-pagination",
+//       clickable: true,
+//    },
+//    navigation: {
+//       nextEl: ".home-slider-button-next",
+//       prevEl: ".home-slider-button-prev",
+//    },
+//    on: {
+//       autoplayTimeLeft(s, time, progress) {
+//          progressCircle.style.setProperty("--progress", 1 - progress);
+//          // progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+//       },
+//    },
+// });
+
+// var swiper = new Swiper(".todays-rate-slider", {
+//    slidesPerView: 2,
+//    loop: true,
+//    // autoplay: {
+//    //    delay: 2000,
+//    // },
+   
+//    navigation: {
+//       nextEl: ".tr-slider-button-next",
+//       prevEl: ".tr-slider-button-prev",
+//    },
+//    breakpoints: {
+//       640: {
+//          slidesPerView: 2,
+//          spaceBetween: 5,
+//       },
+//       768: {
+//          slidesPerView: 3,
+//       }, 
+//       1024: {
+//          slidesPerView: 4,
+//       },        
+//     },
+// });
+
+// var swiper = new Swiper(".product-slider", {
+//    slidesPerView: 2,
+//    loop: true,
+//    navigation: {
+//       nextEl: ".product-slider-button-next",
+//       prevEl: ".product-slider-button-prev",
+//    },
+//    spaceBetween: 10,
+//    breakpoints: {
+//       640: {
+//          slidesPerView: 2,
+//       },
+//       768: {
+//          slidesPerView: 4,
+//       }, 
+//       1024: {
+//          slidesPerView: 6,
+//       },        
+//     },
+// });
+
+// var swiper = new Swiper(".shop-by-category-slider", {
+//    slidesPerView: 1,
+//    loop: true,
+//    navigation: {
+//       nextEl: ".shop-by-category-button-next",
+//       prevEl: ".shop-by-category-button-prev",
+//    },
+//    spaceBetween: 10,
+//    breakpoints: {
+//       768: {
+//          slidesPerView: 2,
+//       },
+//       1024: {
+//          slidesPerView: 3,
+//       },        
+//     },
+// });
+
+// var swiper = new Swiper(".optional-slider", {
+//    slidesPerView: 1,
+//    loop: true,
+//    navigation: {
+//       nextEl: ".optional-slider-button-next",
+//       prevEl: ".optional-slider-button-prev",
+//    },
+//    spaceBetween: 0,
+//    breakpoints: {
+//       768: {
+//          slidesPerView: 2,
+//          spaceBetween: 30,
+//       },
+//     },
+// });
+
+// var swiper = new Swiper(".new-arrivals-slider", {
+//    slidesPerView: 2,
+//    loop: true,
+//    navigation: {
+//       nextEl: ".new-arrivals-slider-button-next",
+//       prevEl: ".new-arrivals-slider-button-prev",
+//    },
+//    spaceBetween: 15,
+//    breakpoints: {
+//       768: {
+//          slidesPerView: 3,
+//       }, 
+//       1024: {
+//          slidesPerView: 4,
+//       },        
+//     },
+// });
+
+// var swiper = new Swiper(".customer-view-slider", {
+//    slidesPerView: 1,
+//    loop: true,
+//    pagination: {
+//       el: ".swiper-pagination",
+//       clickable: true,
+//    },
+//    navigation: {
+//       nextEl: ".customer-view-slider-button-next",
+//       prevEl: ".customer-view-slider-button-prev",
+//    },
+//    breakpoints: {
+//       768: {
+//          slidesPerView: 2,
+//       },        
+//     },
+// });
+
+// var swiper = new Swiper(".offer-zoom-slider", {
+//    centeredSlides: true,
+//    loop: true,
+//    speed: 500,
+//    slidesPerView: 2.5,
+//    autoplay: {
+//        delay: 3000,
+//    },
+//    navigation: {
+//       nextEl: ".offer-zoom-slider-button-next",
+//       prevEl: ".offer-zoom-slider-button-prev",
+//    },
+//    breakpoints: {
+//       375: {
+//          spaceBetween: 60,
+//          slidesPerView: 2,
+//       },
+//       414: {
+//          spaceBetween: 62,
+//          slidesPerView: 2.1,
+//       },
+//       768: {
+//          spaceBetween: 95,
+//       },
+//       1024: {
+//          spaceBetween: 120,
+//       },
+//       1366: {
+//          spaceBetween: 150,
+//       },
+//       1400: {
+//          spaceBetween: 170,
+//       },
+//    }
+// });
+
+$(document).ready(function () {
+   
+   $("[data-popup-open]").on("click", function (e) {
+      var targeted_popup_class = jQuery(this).attr("data-popup-open");
+      $('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
+      e.preventDefault();
+   });
+
+   $("[data-popup-close]").on("click", function (e) {
+      var targeted_popup_class = jQuery(this).attr("data-popup-close");
+      $('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
+      e.preventDefault();
+   });
+
+   $("#user_profile, #extra_links").on("click", function (e) {
+      e.stopPropagation();
+      $(this).next("ul").slideToggle();
+   });
+
+   $(".mobile-menu-btn").on("click", function (e) {
+      e.stopPropagation();
+      $(".mobile-menu-container").fadeIn().addClass("open");
+      // $(".main_body").addClass("overflow-hidden");
+   });
+
+   $(".mobile-menu-close").on("click", function (e) {
+      e.stopPropagation();
+      $(".mobile-menu-container").removeClass("open").fadeOut();
+      // $(".main_body").removeClass("overflow-hidden");
+   });
+
+   $(document).on("click", function () {
+      $("#user_profile").next("ul").slideUp();
+      $("#extra_links").next("ul").slideUp();
+      $(".mobile-menu-container").removeClass("open").fadeOut();
+   });
+   
+   $(".submenu > a").on("click", function (e) {
+      e.stopPropagation();
+      if($(this).hasClass("open")) {
+         $(this).removeClass("open");
+         $(".mobile-menu-container .mobile-menu ul li.submenu ul").slideUp();
+      } else {
+         $(".submenu > a").removeClass("open");
+         $(this).addClass("open");
+         $(".mobile-menu-container .mobile-menu ul li.submenu ul").slideUp();
+         $(this).next("ul").slideDown();
+      }
+   });
+});
+
+var btn = $('#backtotop');
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+    btn.addClass('show');
+  } else {
+    btn.removeClass('show');
+  }
+});
+
+btn.on('click', function(e) {
+   e.preventDefault();
+   // $('html, body').animate({scrollTop:0}, '300');
+   window.scrollTo({top: 0, behavior: 'smooth'});
+ });
+
+ $(document).ready(function() {
+   $('#openBtn').on('click', function() {
+      console.log('clicked search icon');
+      
+     $('#search_downbox').addClass('active');
+   });
+
+   $('#cancelBtn').on('click', function() {
+     $('#search_downbox').removeClass('active');
+   });
+});
+
+// // ---- ---- Const ---- ---- //
+// let inputBox = document.querySelector('.input_search_box'),
+//   searchIcon = document.querySelector('.search_new'),
+//   closeIcon = document.querySelector('.close-icon');
+
+// // ---- ---- Open Input ---- ---- //
+// searchIcon.addEventListener('click', () => {
+//   inputBox.classList.add('open');
+// });
+// // ---- ---- Close Input ---- ---- //
+// closeIcon.addEventListener('click', () => {
+//   inputBox.classList.remove('open');
+// });
+
+
+
+
+// // ---- ---- Const ---- ---- //
+// let input_Box = document.querySelector('.input_search_box_m'),
+//   search_Icon = document.querySelector('.search_new_m'),
+//   close_Icon = document.querySelector('.close_icon_m');
+
+// // ---- ---- Open Input ---- ---- //
+// if (search_Icon) {
+//   search_Icon.addEventListener('click', () => {
+//     if (input_Box) {
+//       input_Box.classList.add('open_window');
+//     }
+//   });
+// }
+
+// // ---- ---- Close Input ---- ---- //
+// if (close_Icon) {
+//   close_Icon.addEventListener('click', () => {
+//     if (input_Box) {
+//       input_Box.classList.remove('open_window');
+//     }
+//   });
+// }
+
+
+$(document).ready(function () {
+   // Function to update height
+   function updateMenuHeight() {
+       var menuHeight = $(".mobile-menu-container").outerHeight();
+       var hcalculate = menuHeight -222; 
+      $(".menu-links").height(hcalculate);
+   }
+
+   // Run on page load
+   updateMenuHeight();
+
+   // Run on button click
+   $(".mobile-menu-btn").on("click", function (e) {
+       updateMenuHeight(); // Update height when button is clicked
+   });
+
+   $(window).on("resize", function () {
+      updateMenuHeight();
+  });
+});

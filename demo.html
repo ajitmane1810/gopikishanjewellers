@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swiper Small Cards Mobile</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- SwiperJS CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body class="bg-gray-100">
+    <div class="bg-red-600 relative max-w-full px-4 md:px-12 md:py-6 py-4">
+      <div class="swiper" id="collectionSwiper">
+        <div class="swiper-wrapper">
+          <!-- Slides: Small on mobile, larger on desktop -->
+          <div class="swiper-slide w-[140px] md:w-[200px] h-[220px] md:h-[260px]">
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden h-full flex flex-col">
+              <img
+                src="assests/item_category_035249000.jpeg"
+                class="w-full h-36 md:h-48 object-cover"
+              />
+              <div class="text-center p-2 text-[12px] md:text-sm uppercase flex-1 flex items-center justify-center overflow-hidden text-ellipsis">
+                Diamond Pendant
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide w-[140px] md:w-[200px] h-[220px] md:h-[260px]">
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden h-full flex flex-col">
+              <img
+                src="assests/item_category_037171800.jpeg"
+                class="w-full h-36 md:h-48 object-cover"
+              />
+              <div class="text-center p-2 text-[12px] md:text-sm uppercase flex-1 flex items-center justify-center overflow-hidden text-ellipsis">
+                Diamond Bali
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide w-[140px] md:w-[200px] h-[220px] md:h-[260px]">
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden h-full flex flex-col">
+              <img
+                src="assests/item_category_038368000.jpeg"
+                class="w-full h-36 md:h-48 object-cover"
+              />
+              <div class="text-center p-2 text-[12px] md:text-sm uppercase flex-1 flex items-center justify-center overflow-hidden text-ellipsis">
+                Diamond Pendant Double Kunda
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide w-[140px] md:w-[200px] h-[220px] md:h-[260px]">
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden h-full flex flex-col">
+              <img
+                src="assests/item_category_038989000.jpeg"
+                class="w-full h-36 md:h-48 object-cover"
+              />
+              <div class="text-center p-2 text-[12px] md:text-sm uppercase flex-1 flex items-center justify-center overflow-hidden text-ellipsis">
+                Double Ring Gents
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide w-[140px] md:w-[200px] h-[220px] md:h-[260px]">
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden h-full flex flex-col">
+              <img
+                src="assests/item_category_088570500.jpeg"
+                class="w-full h-36 md:h-48 object-cover"
+              />
+              <div class="text-center p-2 text-[12px] md:text-sm uppercase flex-1 flex items-center justify-center overflow-hidden text-ellipsis">
+                Diamond Ring Ladies
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide w-[140px] md:w-[200px] h-[220px] md:h-[260px]">
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden h-full flex flex-col">
+              <img
+                src="assests/item_category_095770900.jpeg"
+                class="w-full h-36 md:h-48 object-cover"
+              />
+              <div class="text-center p-2 text-[12px] md:text-sm uppercase flex-1 flex items-center justify-center overflow-hidden text-ellipsis">
+                Diamond Nosepin
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide w-[140px] md:w-[200px] h-[220px] md:h-[260px]">
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden h-full flex flex-col">
+              <img
+                src="assests/item_category_023290000.jpeg"
+                class="w-full h-36 md:h-48 object-cover"
+              />
+              <div class="text-center p-2 text-[12px] md:text-sm uppercase flex-1 flex items-center justify-center overflow-hidden text-ellipsis">
+                Diamond Tops
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide w-[140px] md:w-[200px] h-[220px] md:h-[260px]">
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden h-full flex flex-col">
+              <img
+                src="assests/item_category_024963000.jpeg"
+                class="w-full h-36 md:h-48 object-cover"
+              />
+              <div class="text-center p-2 text-[12px] md:text-sm uppercase flex-1 flex items-center justify-center overflow-hidden text-ellipsis">
+                Diamond Nathuni
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Swiper Navigation Buttons (hidden on mobile) -->
+        <div
+          class="swiper-button-next bg-[#0000004D] text-white hidden md:flex [&::after]:text-xl w-10 h-10 rounded-full"
+        ></div>
+        <div
+          class="swiper-button-prev bg-[#0000004D] text-white hidden md:flex [&::after]:text-xl w-10 h-10 rounded-full"
+        ></div>
+      </div>
+    </div>
+
+    <!-- SwiperJS Script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper("#collectionSwiper", {
+        slidesPerView: 2.5,
+        spaceBetween: 12,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          640: { slidesPerView: 4 },
+          768: { slidesPerView: 5 },
+          1024: { slidesPerView: 6 },
+        },
+      });
+    </script>
+  </body>
+</html>

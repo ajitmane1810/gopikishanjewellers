@@ -1,0 +1,29 @@
+:root {
+    --firstColor: #561325;  /* Replacing with #561325 */
+    --secondColor: #FFEAEF; /* Replacing with #FFEAEF */
+    --thirdColor: #561325;  /* Replacing with #561325 */
+    --navBGColor: #FFEAEF;  /* Replacing with #FFEAEF */
+    --footerBG: #FFEAEF;    /* Replacing with #FFEAEF */
+    --textColor: #2d2d2d;   /* Keeping text color unchanged */
+    --inputBorderColor: #FFEAEF; /* Replacing with #FFEAEF */
+    --svgIconColor: #561325; /* Replacing with #561325 */
+    --svgIconSelectedColor: #561325; /* Replacing with #561325 */
+    --footerActiveBtnBg: #FFEAEF; /* Replacing with #FFEAEF */
+    --buttonBg: #561325;    /* Replacing with #561325 */
+    --fourTabsBg: #561325;  /* Replacing with #561325 */
+    --myOrdersTabsBg: #561325; /* Replacing with #561325 */
+    --gradient: linear-gradient(135deg, #561325 0%, #FFEAEF 100%); /* Replacing gradient */
+    --gradient2: linear-gradient(0deg, #561325 0%, #FFEAEF 100%);  /* Replacing gradient */
+    --gradient3: linear-gradient(0deg, #561325 0%, #FFEAEF 100%);  /* Replacing gradient */
+    --tabHoverColor: #D6A857;  /* Keeping hover color unchanged */
+    --gramOptionBgGradient: linear-gradient(0deg, #561325 0%, #FFEAEF 100%); /* Replacing gradient */
+    --gramOptionSelectedBgGradient: linear-gradient(0deg, #561325 0%, #561325 100%); /* Replacing gradient */
+    --topNavSvgColor: #000;  /* Keeping top nav SVG color unchanged */
+    --topNavSvgSelectedColor: #000;  /* Keeping top nav selected SVG color unchanged */
+    --heartColor: #561325;   /* Replacing with #561325 */
+    --heartSelectedColor: #e0002c;  /* Keeping heart selected color unchanged */
+    --coinsBalanceBoxBG: #FFEAEF;  /* Replacing with #FFEAEF */
+    --imgBorder: #ccc;       /* Keeping image border color unchanged */
+    --white: #ffff;          /* Keeping white color unchanged */
+    --black: #000;
+}
