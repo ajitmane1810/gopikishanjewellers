@@ -40,32 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
- const carousel = document.getElementById("carousel");
-    const cards = carousel.querySelectorAll(".price-card");
-    const cardCount = cards.length;
-    const cardWidth = cards[0].offsetWidth + 24;
-
-    // Clone cards
-    cards.forEach(card => {
-      const clone = card.cloneNode(true);
-      carousel.appendChild(clone);
-    });
-
-    let scrollPosition = 0;
-
-    setInterval(() => {
-      scrollPosition += cardWidth;
-      carousel.scrollTo({ left: scrollPosition, behavior: "smooth" });
-
-      // Reset to start silently when reaching the end of original + clones
-      if (scrollPosition >= cardWidth * cardCount) {
-        scrollPosition = 0;
-        setTimeout(() => {
-          carousel.scrollTo({ right: 0, behavior: "auto" });
-        }, 500); // wait for smooth scroll to finish
-      }
-    }, 2000);
-
 
 
 // collection swiper 

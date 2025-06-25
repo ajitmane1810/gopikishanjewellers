@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>3D Swiper Slider</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+    .swiper-slide {
+      transform: scale(0.6);
+      transition: all 0.5s ease;
+      z-index: 1;
+      opacity: 0.5;
+      filter: brightness(0.8) saturate(0.8);
+    }
+
+    .swiper-slide img {
+      border-radius: 0.75rem;
+      transition: all 0.4s ease;
+    }
+
+    .swiper-slide-active {
+      transform: scale(1.4);
+      z-index: 10;
+      opacity: 1;
+      filter: none;
+    }
+
+    .swiper-slide-active img {
+      border-radius: 1.5rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .swiper-slide:not(.swiper-slide-active)::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(59, 130, 246, 0.1); /* blue overlay */
+      border-radius: 0.75rem;
+    }
+  </style>
+</head>
+<body class="bg-white py-10">
+
+  <!-- Header -->
+  <div class="flex items-center justify-center mb-8 px-4">
+    <div class="flex items-center space-x-2">
+      <div class="w-10 h-px bg-gray-400"></div>
+      <div class="w-2 h-2 bg-black rounded-full"></div>
+    </div>
+    <span class="text-lg sm:text-xl font-medium mx-3 text-center">"Gold: A Timeless Investment for Securing Your Future"</span>
+    <div class="flex items-center space-x-2">
+      <div class="w-2 h-2 bg-black rounded-full"></div>
+      <div class="w-10 h-px bg-gray-400"></div>
+    </div>
+  </div>
+
+  <!-- Swiper Slider -->
+  <div class="max-w-full mx-12 px-4">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide relative w-[250px] md:w-[400px] lg:w-[500px]">
+          <img src="assests/banners/banner_014519400.jpg" class="w-full h-full object-cover" />
+        </div>
+        <div class="swiper-slide relative w-[250px] md:w-[400px] lg:w-[500px]">
+          <img src="assests/banners/banner_012732900.jpg" class="w-full h-full object-cover" />
+        </div>
+        <div class="swiper-slide relative w-[250px] md:w-[400px] lg:w-[500px]">
+          <img src="assests/banners/banner_004397000.jpg" class="w-full h-full object-cover" />
+        </div>
+        <div class="swiper-slide relative w-[250px] md:w-[400px] lg:w-[500px]">
+          <img src="assests/banners/banner_029394300.jpg" class="w-full h-full object-cover" />
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <div class="swiper-button-prev -left-6 absolute top-1/2 -translate-y-1/2 z-10"></div>
+      <div class="swiper-button-next -right-6 absolute top-1/2 -translate-y-1/2 z-10"></div>
+    </div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Swiper Init -->
+  <script>
+    const swiper = new Swiper(".mySwiper", {
+      slidesPerView: "auto",
+      centeredSlides: true,
+      spaceBetween: 20,
+      loop: true,
+      autoplay: {
+        delay: 3000,
+      },
+        navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+      on: {
+        slideChangeTransitionStart: () => {
+          document.querySelectorAll(".swiper-slide").forEach(slide => {
+            slide.style.transform = "scale(0.6)";
+            slide.style.zIndex = "1";
+            slide.style.opacity = "0.5";
+          });
+          const activeSlide = document.querySelector(".swiper-slide-active");
+          activeSlide.style.transform = "scale(1.4)";
+          activeSlide.style.zIndex = "10";
+          activeSlide.style.opacity = "1";
+        }
+      }
+    });
+  </script>
+</body>
+</html>

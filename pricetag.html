@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pricetag</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- SwiperJS CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body class="bg-gray-100">
+    <div class="bg-[#561325] text-white text-sm font-medium rounded-3xl mx-4 my-4 py-2 px-6 md:py-4">
+      <!-- Swiper Container -->
+      <div class="swiper" id="pricetag">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div class="swiper-slide flex items-center gap-2 bg-[#450F1E] px-4 py-2 rounded-lg">
+            <img class="w-10 h-8" src="assests/gold-coins.png" alt="" />
+            <span>18KT(750) <span class="font-bold">₹8360</span> /gm</span>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="swiper-slide flex items-center gap-2 bg-[#450F1E] px-4 py-2 rounded-lg">
+            <img class="w-10 h-8" src="assests/gold-coins.png" alt="" />
+            <span>22KT (916) <span class="font-bold">₹9380</span> /gm</span>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="swiper-slide flex items-center gap-2 bg-[#450F1E] px-4 py-2 rounded-lg">
+            <img class="w-10 h-8" src="assests/silver-coins.png" alt="" />
+            <span>FINE SILVER <span class="font-bold">₹107</span> /gm</span>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="swiper-slide flex items-center gap-2 bg-[#450F1E] px-4 py-2 rounded-lg">
+            <img class="w-10 h-8" src="assests/gold-coins.png" alt="" />
+            <span>PLATINUM <span class="font-bold">₹4200</span> /gm</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SwiperJS Script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const pricetag = new Swiper('#pricetag', {
+        slidesPerView: 1.5,
+        spaceBetween: 12,
+        loop:true,
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: false,
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2.5,
+          },
+          768: {
+            slidesPerView: 3,
+          },
+          1024: {
+            slidesPerView: 3.5,
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
